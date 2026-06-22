@@ -16,7 +16,7 @@ pressure is reduced with **batch writes**.
 ![typeahead](docs/screenshots/ui-light.png)
 
 The UI has debounced prefix suggestions (matched prefix shown in bold), a search
-results view, recent-search history, a recency-aware trending section, keyboard
+response toast, recent-search history, a recency-aware trending section, keyboard
 navigation, and a light/dark theme toggle.
 
 ## Architecture at a glance
@@ -44,7 +44,6 @@ navigation, and a light/dark theme toggle.
 ```
 
 Full write-up: [docs/architecture.md](docs/architecture.md) ·
-design rationale & trade-offs: [docs/interview-notes.md](docs/interview-notes.md) ·
 measured numbers: [docs/performance.md](docs/performance.md).
 
 ## Prerequisites (macOS / Homebrew)
@@ -141,6 +140,6 @@ system are dataset-agnostic — any `query,count` CSV works.
 backend/    C++ server + core library + dataset loader (see src/)
 frontend/   React + Vite UI
 scripts/    start/stop services, dataset download, benchmark
-docs/        architecture, interview notes, performance report, screenshots
+docs/        architecture, performance report, screenshots
 sql/         schema reference
 ```
