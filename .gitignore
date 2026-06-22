@@ -1,0 +1,13 @@
+# Build output
+backend/build/
+# Runtime service data (local Postgres + Redis)
+.run/
+# Datasets (downloaded / generated — see scripts/)
+data/*.csv
+data/*.gz
+# Node
+frontend/node_modules/
+frontend/dist/
+# Misc
+.DS_Store
+*.log
