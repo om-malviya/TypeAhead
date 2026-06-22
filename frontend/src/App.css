@@ -221,6 +221,24 @@
 }
 
 
+/* toast ------------------------------------------------------------------ */
+.toast {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--ok-bg);
+  border: 1px solid var(--ok-border);
+  color: var(--ok-text);
+  border-radius: 999px;
+  font-size: 14px;
+  animation: fadeOut 2.5s ease forwards;
+}
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 /* error ------------------------------------------------------------------ */
 .error {
   margin-top: 16px;

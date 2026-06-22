@@ -25,6 +25,7 @@ export default function App() {
   const [active, setActive] = useState(-1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [toast, setToast] = useState(null)
   const [trending, setTrending] = useState([])
   const [recent, setRecent] = useState(() => {
     try {
@@ -103,11 +104,14 @@ export default function App() {
     setOpen(false)
     setQuery(q)
     try {
-      await fetch('/search', {
+      const r = await fetch('/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: q }),
       })
+      const d = await r.json()
+      setToast(d.message || 'Searched')
+      setTimeout(() => setToast(null), 2500)
       pushRecent(q)
       setTimeout(loadTrending, 1200)
     } catch {
@@ -222,6 +226,7 @@ export default function App() {
         </button>
       </div>
 
+      {toast && <div className="toast">{toast}</div>}
       {error && <div className="error">{error}</div>}
 
 
